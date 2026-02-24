@@ -41,7 +41,8 @@ function ThemeProvider({ children }: { children: React.ReactNode }) {
 function LoadingScreen() {
   return (
     <motion.div
-      className="fixed inset-0 bg-primary z-50 flex flex-col items-center justify-center text-white"
+      style={{ backgroundColor: '#111110' }}
+      className="fixed inset-0 z-50 flex flex-col items-center justify-center text-white"
       initial={{ opacity: 1 }}
       exit={{ opacity: 0, transition: { duration: 0.8, ease: "easeInOut" } }}
     >
@@ -52,7 +53,7 @@ function LoadingScreen() {
         className="flex flex-col items-center"
       >
         <div className="w-20 h-20 border-t-2 border-accent rounded-full animate-spin mb-8"></div>
-        <h1 className="font-serif text-5xl tracking-widest font-light mb-2">AMARAL</h1>
+        <h1 className="font-serif text-5xl tracking-widest font-light mb-2" style={{ color: '#f0ece4' }}>AMARAL</h1>
         <p className="text-xs tracking-[0.3em] text-accent uppercase">Odontologia de Excelência</p>
       </motion.div>
     </motion.div>
@@ -108,8 +109,8 @@ function Sidebar({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen: (v: boolea
                 to={item.path}
                 onClick={() => setIsOpen(false)}
                 className={`flex items-center gap-4 px-4 py-3.5 rounded-xl transition-all duration-300 ${isActive
-                    ? 'bg-primary text-white shadow-md'
-                    : 'text-slate-500 hover:bg-slate-50 hover:text-primary'
+                  ? 'bg-primary text-white shadow-md'
+                  : 'text-slate-500 hover:bg-slate-50 hover:text-primary'
                   }`}
               >
                 <item.icon size={20} className={isActive ? 'text-accent' : 'text-slate-400'} strokeWidth={isActive ? 2 : 1.5} />
